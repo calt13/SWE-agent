@@ -2143,7 +2143,7 @@ This is the pre-release of SWE-agent 1.0. <a href="https://swe-agent.com/latest/
 <p>Before we start with a more structured explanation of the command line options, here are a few examples that you might find immediately useful:</p>
 <div class="highlight"><span class="filename">Fix a github issue</span><pre><span></span><code>python<span class="w"> </span>run.py<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--agent.model.name<span class="o">=</span>gpt4<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--agent.model.per_instance_cost_limit<span class="o">=</span><span class="m">2</span>.00<span class="w"> </span><span class="se">\ </span><span class="w"> </span><span class="c1"># (1)!</span>
+<span class="w">  </span>--agent.model.per_instance_cost_limit<span class="o">=</span><span class="m">2</span>.00<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--env.repo.github_url<span class="o">=</span>https://github.com/SWE-agent/test-repo<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--problem_statement.github_url<span class="o">=</span>https://github.com/SWE-agent/test-repo/issues/1
 </code></pre></div>
@@ -2618,6 +2618,8 @@ Watch out for the following message in the log:</p>
     
     
       <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../assets/js/sh-annotation.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});

@@ -2256,13 +2256,13 @@ Kind of slow, isn't it?</p>
 <span class="w">    </span><span class="nt">deployment</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker</span>
 <span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python:3.11</span>
-<span class="w">  </span><span class="nt">problem_statement</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">repo</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github</span>
+<span class="w">        </span><span class="nt">github_url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://github.com/swe-agent/test-repo&quot;</span>
+<span class="nt">problem_statement</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span>
 <span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;A</span><span class="nv"> </span><span class="s">simple</span><span class="nv"> </span><span class="s">test</span><span class="nv"> </span><span class="s">problem&quot;</span>
 <span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;simple_test_problem&quot;</span>
-<span class="w">  </span><span class="nt">repo</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github</span>
-<span class="w">    </span><span class="nt">github_url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://github.com/swe-agent/test-repo&quot;</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">env</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">deployment</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker</span>
@@ -2373,6 +2373,8 @@ Kind of slow, isn't it?</p>
     
     
       <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../assets/js/sh-annotation.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
