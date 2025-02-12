@@ -41,6 +41,10 @@
          <lastmod>2025-02-12</lastmod>
     </url>
     <url>
+         <loc>https://swe-agent.com/latest/config/environments/</loc>
+         <lastmod>2025-02-12</lastmod>
+    </url>
+    <url>
          <loc>https://swe-agent.com/latest/config/templates/</loc>
          <lastmod>2025-02-12</lastmod>
     </url>
@@ -154,10 +158,6 @@
     </url>
     <url>
          <loc>https://swe-agent.com/latest/usage/batch_mode/</loc>
-         <lastmod>2025-02-12</lastmod>
-    </url>
-    <url>
-         <loc>https://swe-agent.com/latest/usage/benchmarking/</loc>
          <lastmod>2025-02-12</lastmod>
     </url>
     <url>
