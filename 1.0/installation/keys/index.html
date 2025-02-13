@@ -614,32 +614,41 @@ SWE-agent 1.0 is the open source SOTA on SWE-bench lite! <a href="https://swe-ag
 </li>
       
         <li class="md-nav__item">
-  <a href="#supported-models" class="md-nav__link">
+  <a href="#supported-api-models" class="md-nav__link">
     <span class="md-ellipsis">
-      Supported models
+      Supported API models
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#model-options" class="md-nav__link">
+  <a href="#using-local-models" class="md-nav__link">
     <span class="md-ellipsis">
-      Model options
+      Using local models
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Model options">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-model-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complete model options
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#models-for-testing" class="md-nav__link">
     <span class="md-ellipsis">
       Models for testing
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Models for testing">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#debugging" class="md-nav__link">
@@ -2177,32 +2186,41 @@ SWE-agent 1.0 is the open source SOTA on SWE-bench lite! <a href="https://swe-ag
 </li>
       
         <li class="md-nav__item">
-  <a href="#supported-models" class="md-nav__link">
+  <a href="#supported-api-models" class="md-nav__link">
     <span class="md-ellipsis">
-      Supported models
+      Supported API models
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#model-options" class="md-nav__link">
+  <a href="#using-local-models" class="md-nav__link">
     <span class="md-ellipsis">
-      Model options
+      Using local models
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Model options">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-model-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complete model options
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#models-for-testing" class="md-nav__link">
     <span class="md-ellipsis">
       Models for testing
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Models for testing">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#debugging" class="md-nav__link">
@@ -2258,7 +2276,7 @@ SWE-agent 1.0 is the open source SOTA on SWE-bench lite! <a href="https://swe-ag
 # TOGETHER_API_KEY=&#39;Together API Key Here if using Together Model&#39;
 </code></pre></div>
 <p>See the following links for tutorials on obtaining <a href="https://docs.anthropic.com/en/api/getting-started">Anthropic</a>, <a href="https://platform.openai.com/docs/quickstart/step-2-set-up-your-api-key">OpenAI</a>, and <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens">Github</a> tokens.</p>
-<h2 id="supported-models">Supported models</h2>
+<h2 id="supported-api-models">Supported API models</h2>
 <p>We support all models supported by <a href="https://github.com/BerriAI/litellm">litellm</a>, see their list <a href="https://docs.litellm.ai/docs/providers">here</a>.</p>
 <p>Here are a few options for <code>--agent.model.name</code>:</p>
 <table>
@@ -2287,9 +2305,36 @@ SWE-agent 1.0 is the open source SOTA on SWE-bench lite! <a href="https://swe-ag
 </tr>
 </tbody>
 </table>
-<h2 id="model-options">Model options</h2>
-<p>See <a href="../../reference/model_config/">our API docs</a> for more details.</p>
-<h3 id="models-for-testing">Models for testing</h3>
+<div class="admonition warning">
+<p class="admonition-title">Function calling and more: Setting the correct parser</p>
+<p>The default config uses function calling to retrieve actions from the model response, i.e.,
+the model directly provides the action as a JSON object.
+If your model doesn't support function calling, you can use the <code>thought_action</code> parser by setting
+<code>agent.tools.parse_function</code> to <code>thought_action</code>.
+Then, we extract the last triple-backticks block from the model response as the action.
+See <a href="../../reference/parsers/">our API docs</a> for more details on parsers.
+Remember to document the tools in your prompt as the model will not be able to see the function signature
+like with function calling.</p>
+</div>
+<h2 id="using-local-models">Using local models</h2>
+<p>We currently support all models that serve to an endpoint with an OpenAI-compatible API.</p>
+<p>For example, to use llama, you can folloow the <a href="https://docs.litellm.ai/docs/providers/ollama">litellm instructions</a> and set</p>
+<div class="highlight"><pre><span></span><code>agent:
+  model:
+    name: ollama/llama2
+    api_base: http://localhost:11434
+</code></pre></div>
+<p>Please see the above note about using a config that uses the <code>thought_action</code> parser instead of the function calling parser.</p>
+<div class="admonition warning">
+<p class="admonition-title">Exit conditions</p>
+<p>If your local model does not have a cost assigned to, you can use <code>agent.model.per_instance_call_limit</code> to limit the runtime per issue.</p>
+</div>
+<h2 id="complete-model-options">Complete model options</h2>
+<div class="admonition hint">
+<p class="admonition-title">Complete model options</p>
+<p>See <a href="../../reference/model_config/">our API docs</a> for all available options.</p>
+</div>
+<h2 id="models-for-testing">Models for testing</h2>
 <p>We also provide models for testing SWE-agent without spending any credits</p>
 <ul>
 <li><code>HumanModel</code> and <code>HumanThoughtModel</code> will prompt for input from the user that stands in for the output of the LM. This can be used to create new <a href="../../config/demonstrations/#manual">demonstrations</a>.</li>
@@ -2304,6 +2349,7 @@ SWE-agent 1.0 is the open source SOTA on SWE-bench lite! <a href="https://swe-ag
   Also see <a href="https://github.com/SWE-agent/SWE-agent/issues/467">this issue</a>
   for reference.</li>
 </ul>
+<p>% include-markdown "../_footer.md" %}</p>
 
 
 

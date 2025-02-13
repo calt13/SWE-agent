@@ -2105,6 +2105,13 @@ SWE-agent 1.0 is the open source SOTA on SWE-bench lite! <a href="https://swe-ag
 </blockquote>
 <p>Probably all of them! There's even a few for testing. See <a href="../installation/keys/">models</a>.</p>
 <blockquote>
+<p>What can I do if my model doesn't support function calling?</p>
+</blockquote>
+<p>You can configure how to parse the model's response by choosing your <code>agent.tools.parse_function</code>.
+The default now is <code>function_calling</code>, but you can change it to <code>thought_action</code>.
+More information in the <a href="../reference/parsers/">reference</a>.
+There are also some config example in our <a href="https://github.com/SWE-agent/SWE-agent/tree/main/config">config folder</a>.</p>
+<blockquote>
 <p>What's up with all the output files?</p>
 </blockquote>
 <p>You're probably most interested in the <code>*.traj</code> files, which contain complete records of SWE-agent's thought process and actions. See <a href="../usage/trajectories/">output files</a> for more information.</p>

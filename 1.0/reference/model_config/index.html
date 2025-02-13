@@ -1814,13 +1814,13 @@ SWE-agent 1.0 is the open source SOTA on SWE-bench lite! <a href="https://swe-ag
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#normal-lms" class="md-nav__link">
+  <a href="#api-lms" class="md-nav__link">
     <span class="md-ellipsis">
-      Normal LMs
+      API LMs
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Normal LMs">
+    <nav class="md-nav" aria-label="API LMs">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2501,13 +2501,13 @@ SWE-agent 1.0 is the open source SOTA on SWE-bench lite! <a href="https://swe-ag
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#normal-lms" class="md-nav__link">
+  <a href="#api-lms" class="md-nav__link">
     <span class="md-ellipsis">
-      Normal LMs
+      API LMs
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Normal LMs">
+    <nav class="md-nav" aria-label="API LMs">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2909,8 +2909,13 @@ SWE-agent 1.0 is the open source SOTA on SWE-bench lite! <a href="https://swe-ag
 
 
 <h1 id="models">Models</h1>
+<div class="admonition hint">
+<p class="admonition-title">Tutorial</p>
+<p>Please see the <a href="../../installation/keys/">model section in the installation guide</a> for an overview of the different models and how to configure them.</p>
+</div>
 <p>This page documents the configuration objects used to specify the behavior of a language model (LM).</p>
-<h2 id="normal-lms">Normal LMs</h2>
+<p>In most cases, you will want to use the <code>GenericAPIModelConfig</code> object.</p>
+<h2 id="api-lms">API LMs</h2>
 
 
 <div class="doc doc-object doc-class">
@@ -3667,7 +3672,7 @@ This can also be very useful to create your first <a href="../../config/demonstr
   </span>
 
 </h4>
-<div class="doc-signature highlight"><pre><span></span><code><span class="n">multi_line_command_endings</span> <span class="o">=</span> <span class="p">{</span><span class="n"><span title="command.name">name</span></span><span class="p">:</span> <span class="n">_ljpEQHEfor</span> <span class="n">command</span> <span class="ow">in</span> <span class="n"><span title="sweagent.agent.models.HumanModel(tools).commands">commands</span></span> <span class="k">if</span> <span class="n"><span title="command.end_name">end_name</span></span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">}</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">multi_line_command_endings</span> <span class="o">=</span> <span class="p">{</span><span class="n"><span title="command.name">name</span></span><span class="p">:</span> <span class="n">_70BdTWMfor</span> <span class="n">command</span> <span class="ow">in</span> <span class="n"><span title="sweagent.agent.models.HumanModel(tools).commands">commands</span></span> <span class="k">if</span> <span class="n"><span title="command.end_name">end_name</span></span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">}</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
