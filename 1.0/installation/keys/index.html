@@ -2323,12 +2323,13 @@ like with function calling.</p>
   model:
     name: ollama/llama2
     api_base: http://localhost:11434
+    per_instance_cost_limit: 0
+    total_cost_limit: 0
+    per_instance_call_limit: 100
 </code></pre></div>
+<p>If you do not disable the default cost limits, you will see an error because the cost calculator will not be able to find the model in the <code>litellm</code> model cost dictionary.
+Please use the <code>per_instance_call_limit</code> instead to limit the runtime per issue.</p>
 <p>Please see the above note about using a config that uses the <code>thought_action</code> parser instead of the function calling parser.</p>
-<div class="admonition warning">
-<p class="admonition-title">Exit conditions</p>
-<p>If your local model does not have a cost assigned to, you can use <code>agent.model.per_instance_call_limit</code> to limit the runtime per issue.</p>
-</div>
 <h2 id="complete-model-options">Complete model options</h2>
 <div class="admonition hint">
 <p class="admonition-title">Complete model options</p>
