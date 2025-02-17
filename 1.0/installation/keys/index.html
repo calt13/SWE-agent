@@ -632,35 +632,20 @@ SWE-agent 1.0 is the open source SOTA on SWE-bench lite! <a href="https://swe-ag
 </li>
       
         <li class="md-nav__item">
-  <a href="#complete-model-options" class="md-nav__link">
+  <a href="#further-reads" class="md-nav__link">
     <span class="md-ellipsis">
-      Complete model options
+      Further reads
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#models-for-testing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Models for testing
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Models for testing">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#debugging" class="md-nav__link">
     <span class="md-ellipsis">
       Debugging
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2204,35 +2189,20 @@ SWE-agent 1.0 is the open source SOTA on SWE-bench lite! <a href="https://swe-ag
 </li>
       
         <li class="md-nav__item">
-  <a href="#complete-model-options" class="md-nav__link">
+  <a href="#further-reads" class="md-nav__link">
     <span class="md-ellipsis">
-      Complete model options
+      Further reads
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#models-for-testing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Models for testing
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Models for testing">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#debugging" class="md-nav__link">
     <span class="md-ellipsis">
       Debugging
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2267,15 +2237,20 @@ SWE-agent 1.0 is the open source SOTA on SWE-bench lite! <a href="https://swe-ag
 <ol>
 <li>Set the corresponding <a href="https://www.cherryservers.com/blog/how-to-set-list-and-manage-linux-environment-variables">environment variables</a>.</li>
 <li>Create a <code>.env</code> file at the root of this repository. All of the variables defined there will take the place of environment variables.</li>
+<li>Use <code>--agent.model.api_key</code> to set the key</li>
 </ol>
 <p>Here's an example</p>
-<div class="highlight"><pre><span></span><code># Remove the comment &#39;#&#39; in front of the line for all keys that you have set
-# GITHUB_TOKEN=&#39;GitHub Token for access to private repos&#39;
-# OPENAI_API_KEY=&#39;OpenAI API Key Here if using OpenAI Model&#39;
-# ANTHROPIC_API_KEY=&#39;Anthropic API Key Here if using Anthropic Model&#39;
-# TOGETHER_API_KEY=&#39;Together API Key Here if using Together Model&#39;
+<div class="highlight"><pre><span></span><code><span class="c1"># Remove the comment &#39;#&#39; in front of the line for all keys that you have set</span>
+<span class="c1"># GITHUB_TOKEN=&#39;GitHub Token for access to private repos&#39;</span>
+<span class="c1"># OPENAI_API_KEY=&#39;OpenAI API Key Here if using OpenAI Model&#39;</span>
+<span class="c1"># ANTHROPIC_API_KEY=&#39;Anthropic API Key Here if using Anthropic Model&#39;</span>
+<span class="c1"># TOGETHER_API_KEY=&#39;Together API Key Here if using Together Model&#39;</span>
 </code></pre></div>
 <p>See the following links for tutorials on obtaining <a href="https://docs.anthropic.com/en/api/getting-started">Anthropic</a>, <a href="https://platform.openai.com/docs/quickstart/step-2-set-up-your-api-key">OpenAI</a>, and <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens">Github</a> tokens.</p>
+<div class="admonition tip">
+<p class="admonition-title">Advanced settings</p>
+<p>See <a href="../../config/models/">model config</a> for more details on advanced settings.</p>
+</div>
 <h2 id="supported-api-models">Supported API models</h2>
 <p>We support all models supported by <a href="https://github.com/BerriAI/litellm">litellm</a>, see their list <a href="https://docs.litellm.ai/docs/providers">here</a>.</p>
 <p>Here are a few options for <code>--agent.model.name</code>:</p>
@@ -2316,33 +2291,31 @@ See <a href="../../reference/parsers/">our API docs</a> for more details on pars
 Remember to document the tools in your prompt as the model will not be able to see the function signature
 like with function calling.</p>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Specific models</p>
+<p>See <a href="../../config/models/">model config</a> for more details on specific models.</p>
+</div>
 <h2 id="using-local-models">Using local models</h2>
 <p>We currently support all models that serve to an endpoint with an OpenAI-compatible API.</p>
 <p>For example, to use llama, you can folloow the <a href="https://docs.litellm.ai/docs/providers/ollama">litellm instructions</a> and set</p>
-<div class="highlight"><pre><span></span><code>agent:
-  model:
-    name: ollama/llama2
-    api_base: http://localhost:11434
-    per_instance_cost_limit: 0
-    total_cost_limit: 0
-    per_instance_call_limit: 100
+<div class="highlight"><pre><span></span><code><span class="nt">agent</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">model</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ollama/llama2</span>
+<span class="w">    </span><span class="nt">api_base</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://localhost:11434</span>
+<span class="w">    </span><span class="nt">per_instance_cost_limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">    </span><span class="nt">total_cost_limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">    </span><span class="nt">per_instance_call_limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
 </code></pre></div>
 <p>If you do not disable the default cost limits, you will see an error because the cost calculator will not be able to find the model in the <code>litellm</code> model cost dictionary.
 Please use the <code>per_instance_call_limit</code> instead to limit the runtime per issue.</p>
 <p>Please see the above note about using a config that uses the <code>thought_action</code> parser instead of the function calling parser.</p>
-<h2 id="complete-model-options">Complete model options</h2>
+<h2 id="further-reads">Further reads</h2>
 <div class="admonition hint">
-<p class="admonition-title">Complete model options</p>
-<p>See <a href="../../reference/model_config/">our API docs</a> for all available options.</p>
+<p class="admonition-title">Further reads</p>
+<p>See <a href="../../reference/model_config/">our API docs</a> for all available options.
+Our <a href="../../config/models/">model config page</a> has more details on specific models and tips and tricks.</p>
 </div>
-<h2 id="models-for-testing">Models for testing</h2>
-<p>We also provide models for testing SWE-agent without spending any credits</p>
-<ul>
-<li><code>HumanModel</code> and <code>HumanThoughtModel</code> will prompt for input from the user that stands in for the output of the LM. This can be used to create new <a href="../../config/demonstrations/#manual">demonstrations</a>.</li>
-<li><code>ReplayModel</code> takes a trajectory as input and "replays it"</li>
-<li><code>InstantEmptySubmitTestModel</code> will create an empty <code>reproduce.py</code> and then submit</li>
-</ul>
-<h3 id="debugging">Debugging</h3>
+<h2 id="debugging">Debugging</h2>
 <ul>
 <li>If you get <code>Error code: 404</code>, please check your configured keys, in particular
   whether you set <code>OPENAI_API_BASE_URL</code> correctly (if you're not using it, the

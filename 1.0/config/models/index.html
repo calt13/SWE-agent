@@ -1215,6 +1215,18 @@ SWE-agent 1.0 is the open source SOTA on SWE-bench lite! <a href="https://swe-ag
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Models
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1225,6 +1237,85 @@ SWE-agent 1.0 is the open source SOTA on SWE-bench lite! <a href="https://swe-ag
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#notes-for-specific-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes for specific models
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes for specific models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anthropic-claude" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anthropic Claude
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o1" class="md-nav__link">
+    <span class="md-ellipsis">
+      o1
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-multiple-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using multiple keys
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#models-for-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Models for testing
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2079,6 +2170,74 @@ SWE-agent 1.0 is the open source SOTA on SWE-bench lite! <a href="https://swe-ag
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#notes-for-specific-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes for specific models
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes for specific models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anthropic-claude" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anthropic Claude
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o1" class="md-nav__link">
+    <span class="md-ellipsis">
+      o1
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-multiple-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using multiple keys
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#models-for-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Models for testing
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2102,11 +2261,49 @@ SWE-agent 1.0 is the open source SOTA on SWE-bench lite! <a href="https://swe-ag
 
 
 <h1 id="models">Models</h1>
+<div class="admonition tip">
+<p class="admonition-title">Required reading</p>
+<p>See <a href="../../installation/keys/">the model section</a> in the installation guide for a primer before reading the rest of this page.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Related pages</p>
 <ul>
-<li>See <a href="../../installation/keys/">the model section</a> in the installation guide for more details on how to configure models.</li>
 <li>See <a href="../../reference/model_config/">the model config reference</a> for the full list of model options</li>
 <li>To control how the agent extracts the actions from the model response, see the <a href="../../reference/parsers/">action parsers</a> reference</li>
 </ul>
+</div>
+<h2 id="notes-for-specific-models">Notes for specific models</h2>
+<h3 id="local-models">Local models</h3>
+<p>See <a href="../../installation/keys/">the model section</a> in the installation guide.
+Remember to unset spending limits and configure the action parser if you cannot support function calling.</p>
+<h3 id="anthropic-claude">Anthropic Claude</h3>
+<p>Prompt caching makes SWE-agent several times more affordable. While this is done automatically for models like gpt-4o,
+care has to be taken for Anthropic Claude. Anthropic Claude gives you 4 cache break points per key.
+You need two of them for a single agent run (because the break points are both used to retrieve and set the cache).
+Therefore, you can only run two parallel instances of SWE-agent with <a href="../../usage/batch_mode/"><code>run-batch</code></a> per key.
+To support more parallel running instances, supply multiple keys as described below.</p>
+<p>We recommend that you check how often you hit the cache. A very simple way is to go to your trajectory directory and grep like so:</p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-o<span class="w"> </span><span class="s2">&quot;cached_tokens=[0-9]*&quot;</span><span class="w"> </span>django__django-11299.debug.log
+</code></pre></div>
+<h3 id="o1">o1</h3>
+<p>Make sure to set</p>
+<div class="highlight"><pre><span></span><code><span class="nt">agent</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">model</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">top_p</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<span class="w">        </span><span class="nt">temperature</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.</span>
+</code></pre></div>
+<p>as other values aren't supported by <code>o1</code>.</p>
+<h2 id="using-multiple-keys">Using multiple keys</h2>
+<p>We support rotating through multiple keys for <a href="../../usage/batch_mode/"><code>run-batch</code></a>. For this, concatenate all keys with <code>:::</code> and set them via the <code>--agent.model.api_key</code> flag.
+Every thread (i.e., every parallel running agent that is working on one task instance) will stick to one key during the entire run, i.e., this does not break prompt caching.</p>
+<h2 id="models-for-testing">Models for testing</h2>
+<p>We also provide models for testing SWE-agent without spending any credits</p>
+<ul>
+<li><code>HumanModel</code> and <code>HumanThoughtModel</code> will prompt for input from the user that stands in for the output of the LM. This can be used to create new <a href="../demonstrations/#manual">demonstrations</a>.</li>
+<li><code>ReplayModel</code> takes a trajectory as input and "replays it"</li>
+<li><code>InstantEmptySubmitTestModel</code> will create an empty <code>reproduce.py</code> and then submit</li>
+</ul>
+<p>% include-markdown "../_footer.md" %}</p>
 
 
 
