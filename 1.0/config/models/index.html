@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../assets/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
     
     
       
@@ -2277,8 +2277,22 @@ SWE-agent 1.0 is the open source SOTA on SWE-bench lite! <a href="https://swe-ag
 <p>See <a href="../../installation/keys/">the model section</a> in the installation guide.
 Remember to unset spending limits and configure the action parser if you cannot support function calling.</p>
 <h3 id="anthropic-claude">Anthropic Claude</h3>
-<p>Prompt caching makes SWE-agent several times more affordable. While this is done automatically for models like gpt-4o,
-care has to be taken for Anthropic Claude. Anthropic Claude gives you 4 cache break points per key.
+<p>Prompt caching makes SWE-agent several times more affordable. While this is done automatically for models like <code>gpt-4o</code>,
+care has to be taken for Anthropic Claude, as you need to manually set the cache break points.</p>
+<p>For this, include the following history processor:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">agent</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">history_processors</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cache_control</span>
+<span class="w">    </span><span class="nt">last_n_messages</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Other history processors</p>
+<p>Other history processors might interfere with the prompt caching
+if you are not careful.
+However, if your history processor is only modifying the last observation,
+you can combine as done <a href="https://github.com/SWE-agent/SWE-agent/blob/main/config/sweagent_heavy.yaml">here</a>.</p>
+</div>
+<p>Anthropic Claude gives you 4 cache break points per key.
 You need two of them for a single agent run (because the break points are both used to retrieve and set the cache).
 Therefore, you can only run two parallel instances of SWE-agent with <a href="../../usage/batch_mode/"><code>run-batch</code></a> per key.
 To support more parallel running instances, supply multiple keys as described below.</p>
