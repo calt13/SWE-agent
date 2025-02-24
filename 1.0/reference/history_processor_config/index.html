@@ -2709,19 +2709,19 @@ For example, a very simple history processor would be one that strips away old o
         <ul>
             <li>
               <code><a class="autorefs autorefs-internal" title="sweagent.agent.history_processors.LastNObservations.n" href="#sweagent.agent.history_processors.LastNObservations.n">n</a></code>
-                (<code>int</code>)
+                (<code><span title="int">int</span></code>)
             </li>
             <li>
               <code><a class="autorefs autorefs-internal" title="sweagent.agent.history_processors.LastNObservations.polling" href="#sweagent.agent.history_processors.LastNObservations.polling">polling</a></code>
-                (<code>int</code>)
+                (<code><span title="int">int</span></code>)
             </li>
             <li>
               <code><a class="autorefs autorefs-internal" title="sweagent.agent.history_processors.LastNObservations.always_remove_output_for_tags" href="#sweagent.agent.history_processors.LastNObservations.always_remove_output_for_tags">always_remove_output_for_tags</a></code>
-                (<code>set[str]</code>)
+                (<code><span title="set">set</span>[<span title="str">str</span>]</code>)
             </li>
             <li>
               <code><a class="autorefs autorefs-internal" title="sweagent.agent.history_processors.LastNObservations.always_keep_output_for_tags" href="#sweagent.agent.history_processors.LastNObservations.always_keep_output_for_tags">always_keep_output_for_tags</a></code>
-                (<code>set[str]</code>)
+                (<code><span title="set">set</span>[<span title="str">str</span>]</code>)
             </li>
             <li>
               <code><a class="autorefs autorefs-internal" title="sweagent.agent.history_processors.LastNObservations.type" href="#sweagent.agent.history_processors.LastNObservations.type">type</a></code>
@@ -2760,7 +2760,7 @@ For example, a very simple history processor would be one that strips away old o
   </span>
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="n">always_keep_output_for_tags</span><span class="p">:</span> <span class="n">set</span><span class="p">[</span><span class="n">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;keep_output&#39;</span><span class="p">}</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">always_keep_output_for_tags</span><span class="p">:</span> <span class="n"><span title="set">set</span></span><span class="p">[</span><span class="n"><span title="str">str</span></span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;keep_output&#39;</span><span class="p">}</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -2784,7 +2784,7 @@ even if it is not one of the last n observations.</p>
   </span>
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="n">always_remove_output_for_tags</span><span class="p">:</span> <span class="n">set</span><span class="p">[</span><span class="n">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;remove_output&#39;</span><span class="p">}</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">always_remove_output_for_tags</span><span class="p">:</span> <span class="n"><span title="set">set</span></span><span class="p">[</span><span class="n"><span title="str">str</span></span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;remove_output&#39;</span><span class="p">}</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -2808,7 +2808,7 @@ even if it is one of the last n observations.</p>
   </span>
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="n">n</span><span class="p">:</span> <span class="n">int</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">n</span><span class="p">:</span> <span class="n"><span title="int">int</span></span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -2831,7 +2831,7 @@ even if it is one of the last n observations.</p>
   </span>
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="n">polling</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="mi">1</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">polling</span><span class="p">:</span> <span class="n"><span title="int">int</span></span> <span class="o">=</span> <span class="mi">1</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -2881,7 +2881,7 @@ Effectively, we will now keep between <code>n</code> and <code>n+polling</code> 
   </span>
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="nf">validate_n</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="n">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">int</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">validate_n</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="n"><span title="int">int</span></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><span title="int">int</span></span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -2948,11 +2948,11 @@ Effectively, we will now keep between <code>n</code> and <code>n+polling</code> 
             </li>
             <li>
               <code><a class="autorefs autorefs-internal" title="sweagent.agent.history_processors.TagToolCallObservations.tags" href="#sweagent.agent.history_processors.TagToolCallObservations.tags">tags</a></code>
-                (<code>set[str]</code>)
+                (<code><span title="set">set</span>[<span title="str">str</span>]</code>)
             </li>
             <li>
               <code><a class="autorefs autorefs-internal" title="sweagent.agent.history_processors.TagToolCallObservations.function_names" href="#sweagent.agent.history_processors.TagToolCallObservations.function_names">function_names</a></code>
-                (<code>set[str]</code>)
+                (<code><span title="set">set</span>[<span title="str">str</span>]</code>)
             </li>
         </ul>
 
@@ -2980,7 +2980,7 @@ Effectively, we will now keep between <code>n</code> and <code>n+polling</code> 
   </span>
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="n">function_names</span><span class="p">:</span> <span class="n">set</span><span class="p">[</span><span class="n">str</span><span class="p">]</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">function_names</span><span class="p">:</span> <span class="n"><span title="set">set</span></span><span class="p">[</span><span class="n"><span title="str">str</span></span><span class="p">]</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -3003,7 +3003,7 @@ Effectively, we will now keep between <code>n</code> and <code>n+polling</code> 
   </span>
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="n">tags</span><span class="p">:</span> <span class="n">set</span><span class="p">[</span><span class="n">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;keep_output&#39;</span><span class="p">}</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">tags</span><span class="p">:</span> <span class="n"><span title="set">set</span></span><span class="p">[</span><span class="n"><span title="str">str</span></span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;keep_output&#39;</span><span class="p">}</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -3082,15 +3082,15 @@ Use this when running with anthropic claude.</p>
             </li>
             <li>
               <code><a class="autorefs autorefs-internal" title="sweagent.agent.history_processors.CacheControlHistoryProcessor.last_n_messages" href="#sweagent.agent.history_processors.CacheControlHistoryProcessor.last_n_messages">last_n_messages</a></code>
-                (<code>int</code>)
+                (<code><span title="int">int</span></code>)
             </li>
             <li>
               <code><a class="autorefs autorefs-internal" title="sweagent.agent.history_processors.CacheControlHistoryProcessor.last_n_messages_offset" href="#sweagent.agent.history_processors.CacheControlHistoryProcessor.last_n_messages_offset">last_n_messages_offset</a></code>
-                (<code>int</code>)
+                (<code><span title="int">int</span></code>)
             </li>
             <li>
               <code><a class="autorefs autorefs-internal" title="sweagent.agent.history_processors.CacheControlHistoryProcessor.tagged_roles" href="#sweagent.agent.history_processors.CacheControlHistoryProcessor.tagged_roles">tagged_roles</a></code>
-                (<code>list[str]</code>)
+                (<code><span title="list">list</span>[<span title="str">str</span>]</code>)
             </li>
         </ul>
 
@@ -3118,7 +3118,7 @@ Use this when running with anthropic claude.</p>
   </span>
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="n">last_n_messages</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="mi">2</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">last_n_messages</span><span class="p">:</span> <span class="n"><span title="int">int</span></span> <span class="o">=</span> <span class="mi">2</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -3144,7 +3144,7 @@ If set to &lt;= 0, any set cache control will be removed from all messages.</p>
   </span>
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="n">last_n_messages_offset</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">last_n_messages_offset</span><span class="p">:</span> <span class="n"><span title="int">int</span></span> <span class="o">=</span> <span class="mi">0</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -3169,7 +3169,7 @@ we've got the completion and you want to avoid cache mismatch.</p>
   </span>
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="n">tagged_roles</span><span class="p">:</span> <span class="n">list</span><span class="p">[</span><span class="n">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;tool&#39;</span><span class="p">]</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">tagged_roles</span><span class="p">:</span> <span class="n"><span title="list">list</span></span><span class="p">[</span><span class="n"><span title="str">str</span></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;tool&#39;</span><span class="p">]</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -3243,11 +3243,11 @@ we've got the completion and you want to avoid cache mismatch.</p>
         <ul>
             <li>
               <code><a class="autorefs autorefs-internal" title="sweagent.agent.history_processors.RemoveRegex.remove" href="#sweagent.agent.history_processors.RemoveRegex.remove">remove</a></code>
-                (<code>list[str]</code>)
+                (<code><span title="list">list</span>[<span title="str">str</span>]</code>)
             </li>
             <li>
               <code><a class="autorefs autorefs-internal" title="sweagent.agent.history_processors.RemoveRegex.keep_last" href="#sweagent.agent.history_processors.RemoveRegex.keep_last">keep_last</a></code>
-                (<code>int</code>)
+                (<code><span title="int">int</span></code>)
             </li>
             <li>
               <code><a class="autorefs autorefs-internal" title="sweagent.agent.history_processors.RemoveRegex.type" href="#sweagent.agent.history_processors.RemoveRegex.type">type</a></code>
@@ -3279,7 +3279,7 @@ we've got the completion and you want to avoid cache mismatch.</p>
   </span>
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="n">keep_last</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">keep_last</span><span class="p">:</span> <span class="n"><span title="int">int</span></span> <span class="o">=</span> <span class="mi">0</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -3302,7 +3302,7 @@ we've got the completion and you want to avoid cache mismatch.</p>
   </span>
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="n">remove</span><span class="p">:</span> <span class="n">list</span><span class="p">[</span><span class="n">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&lt;diff&gt;.*&lt;/diff&gt;&#39;</span><span class="p">]</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">remove</span><span class="p">:</span> <span class="n"><span title="list">list</span></span><span class="p">[</span><span class="n"><span title="str">str</span></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&lt;diff&gt;.*&lt;/diff&gt;&#39;</span><span class="p">]</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">

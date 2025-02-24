@@ -3106,7 +3106,7 @@ see the <a href="../agent_config/">agent configuration reference page</a>.</p>
 
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_trajectory_data</span><span class="p">(</span><span class="n">choose</span><span class="p">:</span> <span class="n">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">dict</span><span class="p">[</span><span class="n">str</span><span class="p">,</span> <span class="n"><span title="typing.Any">Any</span></span><span class="p">]</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_trajectory_data</span><span class="p">(</span><span class="n">choose</span><span class="p">:</span> <span class="n"><span title="bool">bool</span></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><span title="dict">dict</span></span><span class="p">[</span><span class="n"><span title="str">str</span></span><span class="p">,</span> <span class="n"><span title="typing.Any">Any</span></span><span class="p">]</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -3364,7 +3364,7 @@ main loop that repeatedly calls <code>self._step</code> until the problem is sol
 
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="nf">save_trajectory</span><span class="p">(</span><span class="n">choose</span><span class="p">:</span> <span class="n">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">save_trajectory</span><span class="p">(</span><span class="n">choose</span><span class="p">:</span> <span class="n"><span title="bool">bool</span></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -3509,7 +3509,7 @@ Attempt autosubmit if an error occurs (though all errors should already be handl
 
 
 </h2>
-<div class="doc-signature highlight"><pre><span></span><code><span class="nf">DefaultAgent</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">templates</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="sweagent.agent.agents.TemplateConfig" href="../template_config/#sweagent.agent.agents.TemplateConfig">TemplateConfig</a></span><span class="p">,</span> <span class="n">tools</span><span class="p">:</span> <span class="n"><span title="sweagent.tools.tools.ToolHandler">ToolHandler</span></span><span class="p">,</span> <span class="n">history_processors</span><span class="p">:</span> <span class="n">list</span><span class="p">[</span><span class="n"><span title="sweagent.agent.history_processors.HistoryProcessor">HistoryProcessor</span></span><span class="p">],</span> <span class="n">model</span><span class="p">:</span> <span class="n"><span title="sweagent.agent.models.AbstractModel">AbstractModel</span></span><span class="p">,</span> <span class="n">max_requeries</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="n">_catch_errors</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">_always_require_zero_exit_code</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">action_sampler_config</span><span class="p">:</span> <span class="n"><span title="sweagent.agent.action_sampler.ActionSamplerConfig">ActionSamplerConfig</span></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">DefaultAgent</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">templates</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="sweagent.agent.agents.TemplateConfig" href="../template_config/#sweagent.agent.agents.TemplateConfig">TemplateConfig</a></span><span class="p">,</span> <span class="n">tools</span><span class="p">:</span> <span class="n"><span title="sweagent.tools.tools.ToolHandler">ToolHandler</span></span><span class="p">,</span> <span class="n">history_processors</span><span class="p">:</span> <span class="n"><span title="list">list</span></span><span class="p">[</span><span class="n"><span title="sweagent.agent.history_processors.HistoryProcessor">HistoryProcessor</span></span><span class="p">],</span> <span class="n">model</span><span class="p">:</span> <span class="n"><span title="sweagent.agent.models.AbstractModel">AbstractModel</span></span><span class="p">,</span> <span class="n">max_requeries</span><span class="p">:</span> <span class="n"><span title="int">int</span></span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n"><span title="str">str</span></span> <span class="o">=</span> <span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="n">_catch_errors</span><span class="p">:</span> <span class="n"><span title="bool">bool</span></span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">_always_require_zero_exit_code</span><span class="p">:</span> <span class="n"><span title="bool">bool</span></span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">action_sampler_config</span><span class="p">:</span> <span class="n"><span title="sweagent.agent.action_sampler.ActionSamplerConfig">ActionSamplerConfig</span></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
 </code></pre></div>
 
     <div class="doc doc-contents first">
@@ -3769,7 +3769,7 @@ Attempt autosubmit if an error occurs (though all errors should already be handl
   </span>
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="n">messages</span><span class="p">:</span> <span class="n">list</span><span class="p">[</span><span class="n">dict</span><span class="p">[</span><span class="n">str</span><span class="p">,</span> <span class="n"><span title="typing.Any">Any</span></span><span class="p">]]</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">messages</span><span class="p">:</span> <span class="n"><span title="list">list</span></span><span class="p">[</span><span class="n"><span title="dict">dict</span></span><span class="p">[</span><span class="n"><span title="str">str</span></span><span class="p">,</span> <span class="n"><span title="typing.Any">Any</span></span><span class="p">]]</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -3998,7 +3998,7 @@ processed through all history processors.</p>
 
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="nf">add_instance_template_to_history</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">dict</span><span class="p">[</span><span class="n">str</span><span class="p">,</span> <span class="n">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">add_instance_template_to_history</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n"><span title="dict">dict</span></span><span class="p">[</span><span class="n"><span title="str">str</span></span><span class="p">,</span> <span class="n"><span title="str">str</span></span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -4336,7 +4336,7 @@ This means we send the <code>submit</code> command to the runtime and parse the 
 
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="nf">forward</span><span class="p">(</span><span class="n">history</span><span class="p">:</span> <span class="n">list</span><span class="p">[</span><span class="n">dict</span><span class="p">[</span><span class="n">str</span><span class="p">,</span> <span class="n">str</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n"><span title="sweagent.types.StepOutput">StepOutput</span></span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">forward</span><span class="p">(</span><span class="n">history</span><span class="p">:</span> <span class="n"><span title="list">list</span></span><span class="p">[</span><span class="n"><span title="dict">dict</span></span><span class="p">[</span><span class="n"><span title="str">str</span></span><span class="p">,</span> <span class="n"><span title="str">str</span></span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n"><span title="sweagent.types.StepOutput">StepOutput</span></span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -4362,7 +4362,7 @@ with some of the attributes set.</p>
                 <code>history</code>
             </td>
             <td>
-                  <code>list[dict[str, str]]</code>
+                  <code><span title="list">list</span>[<span title="dict">dict</span>[<span title="str">str</span>, <span title="str">str</span>]]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -4520,7 +4520,7 @@ with some of the attributes set.</p>
 
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="nf">forward_with_handling</span><span class="p">(</span><span class="n">history</span><span class="p">:</span> <span class="n">list</span><span class="p">[</span><span class="n">dict</span><span class="p">[</span><span class="n">str</span><span class="p">,</span> <span class="n">str</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n"><span title="sweagent.types.StepOutput">StepOutput</span></span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">forward_with_handling</span><span class="p">(</span><span class="n">history</span><span class="p">:</span> <span class="n"><span title="list">list</span></span><span class="p">[</span><span class="n"><span title="dict">dict</span></span><span class="p">[</span><span class="n"><span title="str">str</span></span><span class="p">,</span> <span class="n"><span title="str">str</span></span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n"><span title="sweagent.types.StepOutput">StepOutput</span></span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -4547,7 +4547,7 @@ we will not execute it but requery the model for a corrected command.</p>
                 <code>history</code>
             </td>
             <td>
-                  <code>list[dict[str, str]]</code>
+                  <code><span title="list">list</span>[<span title="dict">dict</span>[<span title="str">str</span>, <span title="str">str</span>]]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -4941,7 +4941,7 @@ we will not execute it but requery the model for a corrected command.</p>
 
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_model_requery_history</span><span class="p">(</span><span class="n">error_template</span><span class="p">:</span> <span class="n">str</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">output</span><span class="p">:</span> <span class="n">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">str</span> <span class="o">|</span> <span class="n">int</span> <span class="o">|</span> <span class="n">float</span> <span class="o">|</span> <span class="n">bool</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">list</span><span class="p">[</span><span class="n">dict</span><span class="p">[</span><span class="n">str</span><span class="p">,</span> <span class="n">str</span><span class="p">]]</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_model_requery_history</span><span class="p">(</span><span class="n">error_template</span><span class="p">:</span> <span class="n"><span title="str">str</span></span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">output</span><span class="p">:</span> <span class="n"><span title="str">str</span></span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n"><span title="str">str</span></span> <span class="o">|</span> <span class="n"><span title="int">int</span></span> <span class="o">|</span> <span class="n"><span title="float">float</span></span> <span class="o">|</span> <span class="n"><span title="bool">bool</span></span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><span title="list">list</span></span><span class="p">[</span><span class="n"><span title="dict">dict</span></span><span class="p">[</span><span class="n"><span title="str">str</span></span><span class="p">,</span> <span class="n"><span title="str">str</span></span><span class="p">]]</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -4975,7 +4975,7 @@ If the model is able to correct itself, the records of the mistakes will not be 
                 <code>error_template</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -4991,7 +4991,7 @@ If the model is able to correct itself, the records of the mistakes will not be 
                 <code>output</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5007,7 +5007,7 @@ If the model is able to correct itself, the records of the mistakes will not be 
                 <code>**kwargs</code>
             </td>
             <td>
-                  <code>str | int | float | bool | None</code>
+                  <code><span title="str">str</span> | <span title="int">int</span> | <span title="float">float</span> | <span title="bool">bool</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5033,7 +5033,7 @@ If the model is able to correct itself, the records of the mistakes will not be 
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code>list[dict[str, str]]</code>
+                  <code><span title="list">list</span>[<span title="dict">dict</span>[<span title="str">str</span>, <span title="str">str</span>]]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5125,7 +5125,7 @@ If the model is able to correct itself, the records of the mistakes will not be 
 
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_trajectory_data</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">dict</span><span class="p">[</span><span class="n">str</span><span class="p">,</span> <span class="n"><span title="typing.Any">Any</span></span><span class="p">]</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_trajectory_data</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n"><span title="dict">dict</span></span><span class="p">[</span><span class="n"><span title="str">str</span></span><span class="p">,</span> <span class="n"><span title="typing.Any">Any</span></span><span class="p">]</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -5395,7 +5395,7 @@ If the model is able to correct itself, the records of the mistakes will not be 
 
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="nf">handle_submission</span><span class="p">(</span><span class="n">step</span><span class="p">:</span> <span class="n"><span title="sweagent.types.StepOutput">StepOutput</span></span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">observation</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">force_submission</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><span title="sweagent.types.StepOutput">StepOutput</span></span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">handle_submission</span><span class="p">(</span><span class="n">step</span><span class="p">:</span> <span class="n"><span title="sweagent.types.StepOutput">StepOutput</span></span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">observation</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">force_submission</span><span class="p">:</span> <span class="n"><span title="bool">bool</span></span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><span title="sweagent.types.StepOutput">StepOutput</span></span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -5450,7 +5450,7 @@ If the model is able to correct itself, the records of the mistakes will not be 
                 <code>force_submission</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">

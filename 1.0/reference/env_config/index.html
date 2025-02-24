@@ -1958,6 +1958,15 @@ SWE-agent 1.0 is the open source SOTA on SWE-bench lite! <a href="https://swe-ag
 </li>
         
           <li class="md-nav__item">
+  <a href="#sweagent.environment.swe_env.EnvironmentConfig.post_startup_command_timeout" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-attribute"></code>&nbsp;post_startup_command_timeout
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#sweagent.environment.swe_env.EnvironmentConfig.post_startup_commands" class="md-nav__link">
     <span class="md-ellipsis">
       <code class="doc-symbol doc-symbol-toc doc-symbol-attribute"></code>&nbsp;post_startup_commands
@@ -2194,6 +2203,15 @@ SWE-agent 1.0 is the open source SOTA on SWE-bench lite! <a href="https://swe-ag
 </li>
         
           <li class="md-nav__item">
+  <a href="#sweagent.environment.swe_env.EnvironmentConfig.post_startup_command_timeout" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-attribute"></code>&nbsp;post_startup_command_timeout
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#sweagent.environment.swe_env.EnvironmentConfig.post_startup_commands" class="md-nav__link">
     <span class="md-ellipsis">
       <code class="doc-symbol doc-symbol-toc doc-symbol-attribute"></code>&nbsp;post_startup_commands
@@ -2284,11 +2302,15 @@ To learn about the environment class itself, see the <a href="../env/">environme
             </li>
             <li>
               <code><a class="autorefs autorefs-internal" title="sweagent.environment.swe_env.EnvironmentConfig.post_startup_commands" href="#sweagent.environment.swe_env.EnvironmentConfig.post_startup_commands">post_startup_commands</a></code>
-                (<code>list[str]</code>)
+                (<code><span title="list">list</span>[<span title="str">str</span>]</code>)
+            </li>
+            <li>
+              <code><a class="autorefs autorefs-internal" title="sweagent.environment.swe_env.EnvironmentConfig.post_startup_command_timeout" href="#sweagent.environment.swe_env.EnvironmentConfig.post_startup_command_timeout">post_startup_command_timeout</a></code>
+                (<code><span title="int">int</span></code>)
             </li>
             <li>
               <code><a class="autorefs autorefs-internal" title="sweagent.environment.swe_env.EnvironmentConfig.name" href="#sweagent.environment.swe_env.EnvironmentConfig.name">name</a></code>
-                (<code>str</code>)
+                (<code><span title="str">str</span></code>)
             </li>
         </ul>
 
@@ -2339,10 +2361,34 @@ To learn about the environment class itself, see the <a href="../env/">environme
   </span>
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="n">name</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="s1">&#39;main&#39;</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">name</span><span class="p">:</span> <span class="n"><span title="str">str</span></span> <span class="o">=</span> <span class="s1">&#39;main&#39;</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="sweagent.environment.swe_env.EnvironmentConfig.post_startup_command_timeout" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">post_startup_command_timeout</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-pydantic-field"><code>pydantic-field</code></small>
+  </span>
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">post_startup_command_timeout</span><span class="p">:</span> <span class="n"><span title="int">int</span></span> <span class="o">=</span> <span class="mi">500</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Timeout for the post-startup commands.
+NOTE: The timeout applies to every command in <code>post_startup_commands</code> separately.</p>
     </div>
 
 </div>
@@ -2360,13 +2406,14 @@ To learn about the environment class itself, see the <a href="../env/">environme
   </span>
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="n">post_startup_commands</span><span class="p">:</span> <span class="n">list</span><span class="p">[</span><span class="n">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">post_startup_commands</span><span class="p">:</span> <span class="n"><span title="list">list</span></span><span class="p">[</span><span class="n"><span title="str">str</span></span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
 
         <p>Execute these commands before starting to run the agent but after all other setup steps.
-They will be executed in the same shell as the agent.</p>
+They will be executed in the same shell as the agent.
+Note: Every command is passed as a string, not a list of arguments.</p>
     </div>
 
 </div>

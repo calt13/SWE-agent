@@ -2705,7 +2705,7 @@ For example:</p>
 
 
 </h2>
-<div class="doc-signature highlight"><pre><span></span><code><span class="nf">problem_statement_from_simplified_input</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="nb">input</span><span class="p">:</span> <span class="n">str</span><span class="p">,</span> <span class="nb">type</span><span class="p">:</span> <span class="n"><span title="typing.Literal">Literal</span></span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;text_file&#39;</span><span class="p">,</span> <span class="s1">&#39;github_issue&#39;</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n"><span title="sweagent.agent.problem_statement.ProblemStatementConfig">ProblemStatementConfig</span></span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">problem_statement_from_simplified_input</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="nb">input</span><span class="p">:</span> <span class="n"><span title="str">str</span></span><span class="p">,</span> <span class="nb">type</span><span class="p">:</span> <span class="n"><span title="typing.Literal">Literal</span></span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;text_file&#39;</span><span class="p">,</span> <span class="s1">&#39;github_issue&#39;</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n"><span title="sweagent.agent.problem_statement.ProblemStatementConfig">ProblemStatementConfig</span></span>
 </code></pre></div>
 
     <div class="doc doc-contents first">
@@ -2729,7 +2729,7 @@ For example:</p>
                 <code>input</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -2829,11 +2829,11 @@ For example:</p>
         <ul>
             <li>
               <code><a class="autorefs autorefs-internal" title="sweagent.agent.problem_statement.TextProblemStatement.text" href="#sweagent.agent.problem_statement.TextProblemStatement.text">text</a></code>
-                (<code>str</code>)
+                (<code><span title="str">str</span></code>)
             </li>
             <li>
               <code><a class="autorefs autorefs-internal" title="sweagent.agent.problem_statement.TextProblemStatement.extra_fields" href="#sweagent.agent.problem_statement.TextProblemStatement.extra_fields">extra_fields</a></code>
-                (<code>dict[str, <span title="typing.Any">Any</span>]</code>)
+                (<code><span title="dict">dict</span>[<span title="str">str</span>, <span title="typing.Any">Any</span>]</code>)
             </li>
             <li>
               <code><a class="autorefs autorefs-internal" title="sweagent.agent.problem_statement.TextProblemStatement.type" href="#sweagent.agent.problem_statement.TextProblemStatement.type">type</a></code>
@@ -2841,7 +2841,7 @@ For example:</p>
             </li>
             <li>
               <code><a class="autorefs autorefs-internal" title="sweagent.agent.problem_statement.TextProblemStatement.id" href="#sweagent.agent.problem_statement.TextProblemStatement.id">id</a></code>
-                (<code>str</code>)
+                (<code><span title="str">str</span></code>)
             </li>
         </ul>
 
@@ -2869,7 +2869,7 @@ For example:</p>
   </span>
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="n">extra_fields</span><span class="p">:</span> <span class="n">dict</span><span class="p">[</span><span class="n">str</span><span class="p">,</span> <span class="n"><span title="typing.Any">Any</span></span><span class="p">]</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">extra_fields</span><span class="p">:</span> <span class="n"><span title="dict">dict</span></span><span class="p">[</span><span class="n"><span title="str">str</span></span><span class="p">,</span> <span class="n"><span title="typing.Any">Any</span></span><span class="p">]</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -2893,7 +2893,7 @@ This data will be available when formatting prompt templates.</p>
   </span>
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="nb">id</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="kc">None</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nb">id</span><span class="p">:</span> <span class="n"><span title="str">str</span></span> <span class="o">=</span> <span class="kc">None</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -2914,7 +2914,7 @@ This data will be available when formatting prompt templates.</p>
   </span>
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="n">text</span><span class="p">:</span> <span class="n">str</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">text</span><span class="p">:</span> <span class="n"><span title="str">str</span></span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -2955,7 +2955,7 @@ This data will be available when formatting prompt templates.</p>
 
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_extra_fields</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">dict</span><span class="p">[</span><span class="n">str</span><span class="p">,</span> <span class="n"><span title="typing.Any">Any</span></span><span class="p">]</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_extra_fields</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n"><span title="dict">dict</span></span><span class="p">[</span><span class="n"><span title="str">str</span></span><span class="p">,</span> <span class="n"><span title="typing.Any">Any</span></span><span class="p">]</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -2979,7 +2979,7 @@ This data will be available when formatting prompt templates.</p>
 
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_problem_statement</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">str</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_problem_statement</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n"><span title="str">str</span></span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -3034,7 +3034,7 @@ This data will be available when formatting prompt templates.</p>
             </li>
             <li>
               <code><a class="autorefs autorefs-internal" title="sweagent.agent.problem_statement.FileProblemStatement.extra_fields" href="#sweagent.agent.problem_statement.FileProblemStatement.extra_fields">extra_fields</a></code>
-                (<code>dict[str, <span title="typing.Any">Any</span>]</code>)
+                (<code><span title="dict">dict</span>[<span title="str">str</span>, <span title="typing.Any">Any</span>]</code>)
             </li>
             <li>
               <code><a class="autorefs autorefs-internal" title="sweagent.agent.problem_statement.FileProblemStatement.type" href="#sweagent.agent.problem_statement.FileProblemStatement.type">type</a></code>
@@ -3042,7 +3042,7 @@ This data will be available when formatting prompt templates.</p>
             </li>
             <li>
               <code><a class="autorefs autorefs-internal" title="sweagent.agent.problem_statement.FileProblemStatement.id" href="#sweagent.agent.problem_statement.FileProblemStatement.id">id</a></code>
-                (<code>str</code>)
+                (<code><span title="str">str</span></code>)
             </li>
         </ul>
 
@@ -3070,7 +3070,7 @@ This data will be available when formatting prompt templates.</p>
   </span>
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="n">extra_fields</span><span class="p">:</span> <span class="n">dict</span><span class="p">[</span><span class="n">str</span><span class="p">,</span> <span class="n"><span title="typing.Any">Any</span></span><span class="p">]</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">extra_fields</span><span class="p">:</span> <span class="n"><span title="dict">dict</span></span><span class="p">[</span><span class="n"><span title="str">str</span></span><span class="p">,</span> <span class="n"><span title="typing.Any">Any</span></span><span class="p">]</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -3094,7 +3094,7 @@ This data will be available when formatting prompt templates.</p>
   </span>
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="nb">id</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="kc">None</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nb">id</span><span class="p">:</span> <span class="n"><span title="str">str</span></span> <span class="o">=</span> <span class="kc">None</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -3156,7 +3156,7 @@ This data will be available when formatting prompt templates.</p>
 
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_extra_fields</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">dict</span><span class="p">[</span><span class="n">str</span><span class="p">,</span> <span class="n"><span title="typing.Any">Any</span></span><span class="p">]</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_extra_fields</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n"><span title="dict">dict</span></span><span class="p">[</span><span class="n"><span title="str">str</span></span><span class="p">,</span> <span class="n"><span title="typing.Any">Any</span></span><span class="p">]</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -3180,7 +3180,7 @@ This data will be available when formatting prompt templates.</p>
 
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_problem_statement</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">str</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_problem_statement</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n"><span title="str">str</span></span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -3231,11 +3231,11 @@ This data will be available when formatting prompt templates.</p>
         <ul>
             <li>
               <code><a class="autorefs autorefs-internal" title="sweagent.agent.problem_statement.GithubIssue.github_url" href="#sweagent.agent.problem_statement.GithubIssue.github_url">github_url</a></code>
-                (<code>str</code>)
+                (<code><span title="str">str</span></code>)
             </li>
             <li>
               <code><a class="autorefs autorefs-internal" title="sweagent.agent.problem_statement.GithubIssue.extra_fields" href="#sweagent.agent.problem_statement.GithubIssue.extra_fields">extra_fields</a></code>
-                (<code>dict[str, <span title="typing.Any">Any</span>]</code>)
+                (<code><span title="dict">dict</span>[<span title="str">str</span>, <span title="typing.Any">Any</span>]</code>)
             </li>
             <li>
               <code><a class="autorefs autorefs-internal" title="sweagent.agent.problem_statement.GithubIssue.type" href="#sweagent.agent.problem_statement.GithubIssue.type">type</a></code>
@@ -3243,7 +3243,7 @@ This data will be available when formatting prompt templates.</p>
             </li>
             <li>
               <code><a class="autorefs autorefs-internal" title="sweagent.agent.problem_statement.GithubIssue.id" href="#sweagent.agent.problem_statement.GithubIssue.id">id</a></code>
-                (<code>str</code>)
+                (<code><span title="str">str</span></code>)
             </li>
         </ul>
 
@@ -3271,7 +3271,7 @@ This data will be available when formatting prompt templates.</p>
   </span>
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="n">extra_fields</span><span class="p">:</span> <span class="n">dict</span><span class="p">[</span><span class="n">str</span><span class="p">,</span> <span class="n"><span title="typing.Any">Any</span></span><span class="p">]</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">extra_fields</span><span class="p">:</span> <span class="n"><span title="dict">dict</span></span><span class="p">[</span><span class="n"><span title="str">str</span></span><span class="p">,</span> <span class="n"><span title="typing.Any">Any</span></span><span class="p">]</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -3295,7 +3295,7 @@ This data will be available when formatting prompt templates.</p>
   </span>
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_url</span><span class="p">:</span> <span class="n">str</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_url</span><span class="p">:</span> <span class="n"><span title="str">str</span></span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -3316,7 +3316,7 @@ This data will be available when formatting prompt templates.</p>
   </span>
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="nb">id</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="kc">None</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nb">id</span><span class="p">:</span> <span class="n"><span title="str">str</span></span> <span class="o">=</span> <span class="kc">None</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -3357,7 +3357,7 @@ This data will be available when formatting prompt templates.</p>
 
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_extra_fields</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">dict</span><span class="p">[</span><span class="n">str</span><span class="p">,</span> <span class="n"><span title="typing.Any">Any</span></span><span class="p">]</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_extra_fields</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n"><span title="dict">dict</span></span><span class="p">[</span><span class="n"><span title="str">str</span></span><span class="p">,</span> <span class="n"><span title="typing.Any">Any</span></span><span class="p">]</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -3381,7 +3381,7 @@ This data will be available when formatting prompt templates.</p>
 
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_problem_statement</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">str</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_problem_statement</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n"><span title="str">str</span></span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -3434,7 +3434,7 @@ This data will be available when formatting prompt templates.</p>
         <ul>
             <li>
               <code><a class="autorefs autorefs-internal" title="sweagent.agent.problem_statement.EmptyProblemStatement.id" href="#sweagent.agent.problem_statement.EmptyProblemStatement.id">id</a></code>
-                (<code>str</code>)
+                (<code><span title="str">str</span></code>)
             </li>
             <li>
               <code><a class="autorefs autorefs-internal" title="sweagent.agent.problem_statement.EmptyProblemStatement.type" href="#sweagent.agent.problem_statement.EmptyProblemStatement.type">type</a></code>
@@ -3466,7 +3466,7 @@ This data will be available when formatting prompt templates.</p>
   </span>
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="nb">id</span><span class="p">:</span> <span class="n">str</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nb">id</span><span class="p">:</span> <span class="n"><span title="str">str</span></span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -3507,7 +3507,7 @@ This data will be available when formatting prompt templates.</p>
 
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_extra_fields</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">dict</span><span class="p">[</span><span class="n">str</span><span class="p">,</span> <span class="n"><span title="typing.Any">Any</span></span><span class="p">]</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_extra_fields</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n"><span title="dict">dict</span></span><span class="p">[</span><span class="n"><span title="str">str</span></span><span class="p">,</span> <span class="n"><span title="typing.Any">Any</span></span><span class="p">]</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -3531,7 +3531,7 @@ This data will be available when formatting prompt templates.</p>
 
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_problem_statement</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">str</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_problem_statement</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n"><span title="str">str</span></span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
