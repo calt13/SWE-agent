@@ -2069,23 +2069,6 @@ SWE-agent 1.0 is the open source SOTA on SWE-bench lite! <a href="https://swe-ag
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#example-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example configuration
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2109,10 +2092,6 @@ SWE-agent 1.0 is the open source SOTA on SWE-bench lite! <a href="https://swe-ag
 
 
 <h1 id="configuration">Configuration</h1>
-<div class="admonition warning">
-<p class="admonition-title">Under construction</p>
-<p>This section is under construction. SWE-agent 1.0.0 is much more flexible, but that also means that we need to cover more ground here.</p>
-</div>
 <p>This page contains details describing how to write your own configurations to control how agents can interact with the <code>SWEEnv</code> environment.</p>
 <p>A configuration is represented in one or more <code>.yaml</code> files, specified by the <code>--config</code> flag in the <a href="../usage/cl_tutorial/">command line interface</a>, allowing you to...</p>
 <ul>
@@ -2126,8 +2105,11 @@ SWE-agent 1.0 is the open source SOTA on SWE-bench lite! <a href="https://swe-ag
 <p class="admonition-title">Default config files</p>
 <p>Our default config files are in the <a href="https://github.com/SWE-agent/SWE-agent/tree/main/config"><code>config/</code></a> directory.</p>
 </div>
-<h2 id="example-configuration">Example configuration</h2>
-<p>This is the current default:</p>
+<p>To use a config file, you can use the <code>--config</code> flag in the command line interface.</p>
+<div class="highlight"><pre><span></span><code>sweagent<span class="w"> </span>run<span class="w"> </span>--config<span class="w"> </span>config/your_config.yaml
+sweagent<span class="w"> </span>run-batch<span class="w"> </span>--config<span class="w"> </span>config/your_config.yaml
+</code></pre></div>
+<p>This is the current default configuration file which is loaded when no <code>--config</code> flag is provided:</p>
 <details>
 <summary><code>default_from_url.yaml</code></summary>
 

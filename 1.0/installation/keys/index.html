@@ -632,18 +632,18 @@ SWE-agent 1.0 is the open source SOTA on SWE-bench lite! <a href="https://swe-ag
 </li>
       
         <li class="md-nav__item">
-  <a href="#further-reads" class="md-nav__link">
+  <a href="#something-went-wrong" class="md-nav__link">
     <span class="md-ellipsis">
-      Further reads
+      Something went wrong?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#debugging" class="md-nav__link">
+  <a href="#further-reads-debugging" class="md-nav__link">
     <span class="md-ellipsis">
-      Debugging
+      Further reads &amp; debugging
     </span>
   </a>
   
@@ -2189,18 +2189,18 @@ SWE-agent 1.0 is the open source SOTA on SWE-bench lite! <a href="https://swe-ag
 </li>
       
         <li class="md-nav__item">
-  <a href="#further-reads" class="md-nav__link">
+  <a href="#something-went-wrong" class="md-nav__link">
     <span class="md-ellipsis">
-      Further reads
+      Something went wrong?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#debugging" class="md-nav__link">
+  <a href="#further-reads-debugging" class="md-nav__link">
     <span class="md-ellipsis">
-      Debugging
+      Further reads &amp; debugging
     </span>
   </a>
   
@@ -2285,7 +2285,7 @@ SWE-agent 1.0 is the open source SOTA on SWE-bench lite! <a href="https://swe-ag
 <p>The default config uses function calling to retrieve actions from the model response, i.e.,
 the model directly provides the action as a JSON object.
 If your model doesn't support function calling, you can use the <code>thought_action</code> parser by setting
-<code>agent.tools.parse_function</code> to <code>thought_action</code>.
+<code>agent.tools.parse_function.type</code> to <code>thought_action</code>.
 Then, we extract the last triple-backticks block from the model response as the action.
 See <a href="../../reference/parsers/">our API docs</a> for more details on parsers.
 Remember to document the tools in your prompt as the model will not be able to see the function signature
@@ -2297,25 +2297,48 @@ like with function calling.</p>
 </div>
 <h2 id="using-local-models">Using local models</h2>
 <p>We currently support all models that serve to an endpoint with an OpenAI-compatible API.</p>
-<p>For example, to use llama, you can folloow the <a href="https://docs.litellm.ai/docs/providers/ollama">litellm instructions</a> and set</p>
-<div class="highlight"><pre><span></span><code><span class="nt">agent</span><span class="p">:</span>
+<p>For example, to use llama, you can follow the <a href="https://docs.litellm.ai/docs/providers/ollama">litellm instructions</a> and set</p>
+<div class="highlight"><span class="filename">config/your_config.yaml</span><pre><span></span><code><span class="nt">agent</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">model</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ollama/llama2</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ollama/llama2</span><span class="w">  </span><span class="c1"># (1)!</span>
 <span class="w">    </span><span class="nt">api_base</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://localhost:11434</span>
-<span class="w">    </span><span class="nt">per_instance_cost_limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">    </span><span class="nt">per_instance_cost_limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w">   </span><span class="c1"># (2)!</span>
 <span class="w">    </span><span class="nt">total_cost_limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
 <span class="w">    </span><span class="nt">per_instance_call_limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+<span class="w">  </span><span class="nt">tools</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># The default for obtaining actions from model outputs is function calling.</span>
+<span class="w">    </span><span class="c1"># If your local model does not support that, you can use the thought_action parser</span>
+<span class="w">    </span><span class="c1"># instead (see below)</span>
+<span class="w">    </span><span class="nt">parse_function</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;thought_action&quot;</span>
 </code></pre></div>
-<p>If you do not disable the default cost limits, you will see an error because the cost calculator will not be able to find the model in the <code>litellm</code> model cost dictionary.
-Please use the <code>per_instance_call_limit</code> instead to limit the runtime per issue.</p>
-<p>Please see the above note about using a config that uses the <code>thought_action</code> parser instead of the function calling parser.</p>
-<h2 id="further-reads">Further reads</h2>
-<div class="admonition hint">
-<p class="admonition-title">Further reads</p>
-<p>See <a href="../../reference/model_config/">our API docs</a> for all available options.
-Our <a href="../../config/models/">model config page</a> has more details on specific models and tips and tricks.</p>
+<ol>
+<li>Make sure that your model includes a "provider", i.e., follows the form <code>provider/model_name</code>. The model name and provider might be arbitrarily chosen.</li>
+<li>We cannot track costs, so you must disable this (see below)</li>
+</ol>
+<p>in your <a href="../../config/config/">config file</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Model providers</p>
+<p>Make sure that your model name includes a "provider", i.e., follows the form <code>provider/model_name</code>. The model name and provider might be arbitrarily chosen
+for local models.</p>
 </div>
-<h2 id="debugging">Debugging</h2>
+<div class="admonition warning">
+<p class="admonition-title">Cost limits</p>
+<p>If you do not disable the default cost limits, you will see an error because the cost calculator will not be able to find the model in the <code>litellm</code> model cost dictionary.
+Please make sure to the set the <code>per_instance_cost_limit</code> to 0 and use the <code>per_instance_call_limit</code> instead to limit the runtime per issue.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Parsing functions</p>
+<p>The default config uses function calling to retrieve actions from the model response, i.e.,
+the model directly provides the action as a JSON object.
+If your model doesn't support function calling, you can use the <code>thought_action</code> parser by setting
+<code>agent.tools.parse_function.type</code> to <code>thought_action</code>.
+Then, we extract the last triple-backticks block from the model response as the action.
+See <a href="../../reference/parsers/">our API docs</a> for more details on parsers.
+Remember to document the tools in your prompt as the model will not be able to see the function signature
+like with function calling.</p>
+</div>
+<h2 id="something-went-wrong">Something went wrong?</h2>
 <ul>
 <li>If you get <code>Error code: 404</code>, please check your configured keys, in particular
   whether you set <code>OPENAI_API_BASE_URL</code> correctly (if you're not using it, the
@@ -2323,7 +2346,24 @@ Our <a href="../../config/models/">model config page</a> has more details on spe
   Also see <a href="https://github.com/SWE-agent/SWE-agent/issues/467">this issue</a>
   for reference.</li>
 </ul>
-<p>% include-markdown "../_footer.md" %}</p>
+<h2 id="further-reads-debugging">Further reads &amp; debugging</h2>
+<div class="admonition hint">
+<p class="admonition-title">Further reads</p>
+<p>See <a href="../../reference/model_config/">our API docs</a> for all available options.
+Our <a href="../../config/models/">model config page</a> has more details on specific models and tips and tricks.</p>
+</div>
+<div class="grid cards">
+<ul>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 12h-4v-2h4m0 6h-4v-2h4m6-6h-2.81a6 6 0 0 0-1.82-1.96L17 4.41 15.59 3l-2.17 2.17a6 6 0 0 0-2.83 0L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20z"/></svg></span> <strong>Something broken?</strong>
+    <a href="https://github.com/SWE-agent/SWE-agent/issues/new?template=bug_report.yml"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Report bug</a></p>
+</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 19h3v3h-3zm2-17c5.35.22 7.68 5.62 4.5 9.67-.83 1-2.17 1.66-2.83 2.5C13 15 13 16 13 17h-3c0-1.67 0-3.08.67-4.08.66-1 2-1.59 2.83-2.25C15.92 8.43 15.32 5.26 12 5a3 3 0 0 0-3 3H6a6 6 0 0 1 6-6"/></svg></span> <strong>Something unclear?</strong>
+    <a href="https://github.com/SWE-agent/SWE-agent/issues/new?template=question.yml"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Ask question</a></p>
+</li>
+</ul>
+</div>
 
 
 
