@@ -2316,7 +2316,9 @@ like with function calling.</p>
 <li>Make sure that your model includes a "provider", i.e., follows the form <code>provider/model_name</code>. The model name and provider might be arbitrarily chosen.</li>
 <li>We cannot track costs, so you must disable this (see below)</li>
 </ol>
-<p>in your <a href="../../config/config/">config file</a>.</p>
+<p>in your <a href="../../config/config/">config file</a>.
+If you're using a <a href="https://docs.litellm.ai/docs/providers/openai_compatible#usage-with-litellm-proxy-server">litellm proxy</a>, make sure to set your <code>agent.model.name</code> to <code>openai/...</code>
+and set <code>agent.model.api_key</code> to the key you've configured for your proxy (or a random value; it cannot be empty).</p>
 <div class="admonition warning">
 <p class="admonition-title">Model providers</p>
 <p>Make sure that your model name includes a "provider", i.e., follows the form <code>provider/model_name</code>. The model name and provider might be arbitrarily chosen
