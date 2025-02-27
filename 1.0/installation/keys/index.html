@@ -65,6 +65,16 @@
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-1PLNN3BXX7"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-1PLNN3BXX7",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-1PLNN3BXX7",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
     
     
@@ -2305,6 +2315,7 @@ like with function calling.</p>
 <span class="w">    </span><span class="nt">per_instance_cost_limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w">   </span><span class="c1"># (2)!</span>
 <span class="w">    </span><span class="nt">total_cost_limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
 <span class="w">    </span><span class="nt">per_instance_call_limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+<span class="w">    </span><span class="nt">max_input_tokens</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w">  </span><span class="c1"># (3)!</span>
 <span class="w">  </span><span class="nt">tools</span><span class="p">:</span>
 <span class="w">    </span><span class="c1"># The default for obtaining actions from model outputs is function calling.</span>
 <span class="w">    </span><span class="c1"># If your local model does not support that, you can use the thought_action parser</span>
@@ -2315,6 +2326,7 @@ like with function calling.</p>
 <ol>
 <li>Make sure that your model includes a "provider", i.e., follows the form <code>provider/model_name</code>. The model name and provider might be arbitrarily chosen.</li>
 <li>We cannot track costs, so you must disable this (see below)</li>
+<li>Disable max input tokens check</li>
 </ol>
 <p>in your <a href="../../config/config/">config file</a>.
 If you're using a <a href="https://docs.litellm.ai/docs/providers/openai_compatible#usage-with-litellm-proxy-server">litellm proxy</a>, make sure to set your <code>agent.model.name</code> to <code>openai/...</code>
@@ -2325,9 +2337,10 @@ and set <code>agent.model.api_key</code> to the key you've configured for your p
 for local models.</p>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">Cost limits</p>
+<p class="admonition-title">Cost/token limits</p>
 <p>If you do not disable the default cost limits, you will see an error because the cost calculator will not be able to find the model in the <code>litellm</code> model cost dictionary.
-Please make sure to the set the <code>per_instance_cost_limit</code> to 0 and use the <code>per_instance_call_limit</code> instead to limit the runtime per issue.</p>
+Please make sure to the set the <code>per_instance_cost_limit</code> to 0 and use the <code>per_instance_call_limit</code> instead to limit the runtime per issue.
+Please also make sure to set <code>max_input_tokens</code> to a non-<code>None</code> value to avoid a lot of warnings.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Parsing functions</p>
@@ -2339,6 +2352,15 @@ Then, we extract the last triple-backticks block from the model response as the 
 See <a href="../../reference/parsers/">our API docs</a> for more details on parsers.
 Remember to document the tools in your prompt as the model will not be able to see the function signature
 like with function calling.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Message types</p>
+<p>The <code>cache_control</code> history processor requires a different message format
+(e.g., <code>{'role': 'user', 'content': [{'type': 'text', 'text': 'some text', 'cache_control': {'type': 'ephemeral'}}]}]</code>).
+This might not be understood by all language models.
+Therefore, please remove this history processor if you do not need it
+(it's currently mostly used for anthropic cache control).
+See <a href="https://github.com/SWE-agent/SWE-agent/issues/957">#957</a> for more information.</p>
 </div>
 <h2 id="something-went-wrong">Something went wrong?</h2>
 <ul>
@@ -2374,6 +2396,8 @@ Our <a href="../../config/models/">model config page</a> has more details on spe
 
 
 
+
+  
 
 
 
